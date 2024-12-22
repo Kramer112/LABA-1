@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Система управління доставкою піци</title>
+</head>
+<body>
+
+    <h1>Система управління доставкою піци</h1>
+
+    <div class="container">
+        <!-- Додавання піци -->
+        <div class="control-section" id="addPizzaSection">
+            <h2>Додавання нової піци</h2>
+            <input type="text" id="pizzaName" placeholder="Назва піци" required>
+            <input type="number" id="pizzaPrice" placeholder="Ціна піци" min="0" required>
+            <button id="addPizzaButton">Додати піцу</button>
+            <div id="pizzaList"></div>
+        </div>
+
+        <!-- Додавання замовлення -->
+        <div class="control-section" id="addOrderSection">
+            <h2>Нове замовлення</h2>
+            <input type="text" id="customerSurname" placeholder="Прізвище" required>
+            <input type="tel" id="customerPhone" placeholder="Телефон (+380)" pattern="\+380\d{9}" required>
+            <input type="text" id="city" placeholder="Місто" required>
+            <input type="text" id="district" placeholder="Район" required>
+            <input type="text" id="street" placeholder="Вулиця" required>
+            <input type="text" id="houseNumber" placeholder="Номер будинку" required>
+            <input type="text" id="apartmentNumber" placeholder="Номер квартири">
+            <input type="time" id="orderTime" placeholder="Час прийому замовлення" required>
+            <select id="pizzaSelect">
+                <option value="">Оберіть піцу</option>
+            </select>
+            <input type="number" id="pizzaQuantity" placeholder="Кількість" min="1" required>
+            <button id="addOrderButton">Додати замовлення</button>
+        </div>
+
+        <!-- Пошук та сортування -->
+        <div class="control-section" id="searchAndSortSection">
+            <h2>Пошук та сортування</h2>
+            <input type="text" id="searchQuery" placeholder="Пошук за прізвищем">
+            <select id="sortParameter">
+                <option value="price">За ціною</option>
+                <option value="time">За часом</option>
+                <option value="status">За статусом</option>
+            </select>
+            <button id="searchButton">Пошук</button>
+        </div>
+
+        <!-- Перегляд замовлень -->
+        <div class="control-section" id="viewOrdersSection">
+            <h2>Список замовлень</h2>
+            <div id="orderList"></div>
+        </div>
+
+        <!-- Найпопулярніші піци та райони -->
+        <div class="control-section" id="viewPopularSection">
+            <h2>Найпопулярніші піци та райони</h2>
+            <button id="viewPopularPizzasButton">Популярні піци</button>
+            <button id="viewPopularDistrictsButton">Популярні райони</button>
+            <div id="popularList"></div>
+        </div>
+
+        <!-- Зміна статусу замовлення --> 
+        <div class="control-section" id="changeOrderStatusSection">
+            <h2>Зміна статусу замовлення</h2>
+            <input type="number" id="orderId" placeholder="ID замовлення" min="1">
+            <select id="orderStatus">
+                <option value="Доставка">Доставка</option>
+                <option value="Доставлено">Доставлено</option>
+            </select>
+            <input type="text" id="courierSurname" placeholder="Прізвище доставщика">
+            <input type="time" id="deliveryTime" placeholder="Час доставки">
+            <button id="updateOrderStatusButton">Оновити статус</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
